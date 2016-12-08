@@ -5,7 +5,7 @@ user=`sed -n 4p ./setting/user.txt`
 pass=`sed -n 6p ./setting/user.txt`
 
 fdisk /dev/sda <<EOF
-o
+g
 n
 p
 

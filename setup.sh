@@ -14,4 +14,4 @@ wget https://raw.githubusercontent.com/mute1997/archlinuxInstaller-sh/master/set
 
 cd ..
 chmod +x install.sh
-./instal.sh
+./install.sh

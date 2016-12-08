@@ -4,9 +4,15 @@ rootpw=`sed -n 2p ./setting/user.txt`
 user=`sed -n 4p ./setting/user.txt`
 pass=`sed -n 6p ./setting/user.txt`
 
-parted /dev/sda mklabel gpt
-parted /dev/sda mkpart primary ext4 0 -0
+fdisk /dev/sda <<EOF
+o
+n
+p
 
+
+
+w
+EOF
 mkfs.ext4 /dev/sda1
 
 mount /dev/sda1 /mnt

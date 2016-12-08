@@ -19,7 +19,7 @@ mkdir /mnt/boot
 
 timedatectl set-ntp true
 
-cat mirrorlist > /etc/pacman.d/mirrorlist
+cat ./setting/mirrorlist > /etc/pacman.d/mirrorlist
 
 pacstrap /mnt base base-devel
 
@@ -30,9 +30,9 @@ echo useradd -D ${user} >> ./chroot_setup.sh
 echo echo root:${rootpw} | chpasswd >> ./chroot_setup.sh
 echo echo ${user}:${pass} | chpasswd >> ./chroot_setup.sh
 
-chmod +x ./chroot_setup.sh
 cp ./chroot_setup.sh /mnt/chroot_setup.sh
 cp ./setting/netctl_setting /mnt/etc/netctl/eth0
+chmod +x /mnt/chroot_setup.sh
 
 arch-chroot /mnt "/chroot_setup.sh"
 

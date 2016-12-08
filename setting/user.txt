@@ -1,0 +1,6 @@
+#root password
+abcd1234
+#user name
+mute
+#user password
+abcd1234
